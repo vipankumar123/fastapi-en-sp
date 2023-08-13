@@ -20,5 +20,4 @@ def process_form(request: Request, user_input: str = Form(default=''), file_inpu
     user_input_value = user_input
     file_content = file_input.file.read().decode("utf-8")
     translated_result = translate_english_to_spanish(file_content)
-
     return templates.TemplateResponse('index.html', {"request": request, "user_input_value": user_input_value, "translated_result": translated_result})
